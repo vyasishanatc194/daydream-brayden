@@ -1,0 +1,373 @@
+<!-- Begin page content -->
+<main role="main" class="flex-shrink-0 middle-section">
+	<div class="middle-inner">
+		<section class="signup-section">
+			<div class="signup-bg"></div>
+			<div class="signup-inner">
+				<div class="container container-960">
+					<!-- sign up -info -->
+					<div class="signup-info">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="signup-info-box">
+									<div class="info-icon info-icon-2">
+										<img src="assets/images/icon-student-results.svg" alt="" />
+									</div>
+									<div class="info-content">
+										<h3>View your students' results</h3>
+										<p>
+											Enroll your students into your own version of any
+											Infiniscope lesson, and get access to their progress and
+											result reports. See the decisions your students make and
+											the different pathways they take as they move through an
+											activity.
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="signup-info-box">
+									<div class="info-icon">
+										<img src="assets/images/icon-community.svg" alt="" />
+									</div>
+									<div class="info-content">
+										<h3>Join the community</h3>
+										<p>
+											Get updates as the Infiniscope lesson portfolio grows.
+											Contribute your own adapted lessons to the network!
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end -->
+
+					<div class="signup-form">
+						<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+							<div class="signup-header">
+								<h3>Join Infiniscope as an Educator</h3>
+							</div>
+
+							<div class="signup-body">
+								<p>Start teaching with Infiniscope</p>
+
+								<div class="form-group">
+									<label for="">Name</label>
+									<input
+										class="form-control"
+										placeholder="First name"
+										formControlName="firstName"
+										[ngClass]="{
+											'is-invalid': submitted && f.firstName.errors
+										}"
+									/>
+									<div
+										*ngIf="submitted && f.firstName.errors"
+										class="invalid-feedback"
+									>
+										<div *ngIf="f.firstName.errors.required">
+											First Name is required
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<input
+										class="form-control"
+										placeholder="Last name"
+										formControlName="lastName"
+										[ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"
+									/>
+									<div
+										*ngIf="submitted && f.lastName.errors"
+										class="invalid-feedback"
+									>
+										<div *ngIf="f.lastName.errors.required">
+											Last Name is required
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="">Email</label>
+									<input
+										type="email"
+										class="form-control"
+										placeholder="Email Address"
+										formControlName="email"
+										[ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+									/>
+									<div
+										*ngIf="submitted && f.email.errors"
+										class="invalid-feedback"
+									>
+										<div *ngIf="f.email.errors.required">
+											Last Name is required
+										</div>
+									</div>
+								</div>
+
+								<hr />
+
+								<div class="form-group">
+									<label for="">Educational institutional</label>
+									<input
+										class="form-control"
+										placeholder="Name"
+										formControlName="institueName"
+										[ngClass]="{
+											'is-invalid': submitted && f.institueName.errors
+										}"
+									/>
+									<div
+										*ngIf="submitted && f.institueName.errors"
+										class="invalid-feedback"
+									>
+										<div *ngIf="f.institueName.errors.required">
+											Name is required
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<select
+										class="form-control"
+										formControlName="institueType"
+										[ngClass]="{
+											'is-invalid': submitted && f.institueType.errors
+										}"
+									>
+										<option value="">Type</option>
+									</select>
+									<div
+										*ngIf="submitted && f.institueType.errors"
+										class="invalid-feedback"
+									>
+										<div *ngIf="f.institueType.errors.required">
+											Type is required
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<input
+										class="form-control"
+										placeholder="City"
+										formControlName="institueCity"
+										[ngClass]="{
+											'is-invalid': submitted && f.institueCity.errors
+										}"
+									/>
+									<div
+										*ngIf="submitted && f.institueCity.errors"
+										class="invalid-feedback"
+									>
+										<div *ngIf="f.institueCity.errors.required">
+											City is required
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<input
+										class="form-control"
+										placeholder="State"
+										formControlName="institueState"
+										[ngClass]="{
+											'is-invalid': submitted && f.institueState.errors
+										}"
+									/>
+									<div
+										*ngIf="submitted && f.institueState.errors"
+										class="invalid-feedback"
+									>
+										<div *ngIf="f.institueState.errors.required">
+											State is required
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<input
+										class="form-control"
+										placeholder="Zip"
+										formControlName="institueZip"
+										[ngClass]="{
+											'is-invalid': submitted && f.institueZip.errors
+										}"
+									/>
+									<div
+										*ngIf="submitted && f.institueZip.errors"
+										class="invalid-feedback"
+									>
+										<div *ngIf="f.institueZip.errors.required">
+											Zip is required
+										</div>
+									</div>
+								</div>
+
+								<hr />
+
+								<div class="form-group">
+									<label for="">Subject taught</label>
+									<input
+										class="form-control"
+										placeholder="Name"
+										formControlName="institueSubject"
+										[ngClass]="{
+											'is-invalid': submitted && f.institueSubject.errors
+										}"
+									/>
+									<div
+										*ngIf="submitted && f.institueSubject.errors"
+										class="invalid-feedback"
+									>
+										<div *ngIf="f.institueSubject.errors.required">
+											Subject is required
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="">Grade level</label>
+									<div class="group-checkbox">
+										<div class="custom-control custom-checkbox">
+											<input
+												type="checkbox"
+												class="custom-control-input"
+												id="customCheck222"
+												name="example1"
+												checked=""
+											/>
+											<label class="custom-control-label" for="customCheck222"
+												>K-12</label
+											>
+										</div>
+
+										<div class="custom-control custom-checkbox">
+											<input
+												type="checkbox"
+												class="custom-control-input"
+												id="customCheck232"
+												name="example1"
+											/>
+											<label class="custom-control-label" for="customCheck232"
+												>3-5</label
+											>
+										</div>
+
+										<div class="custom-control custom-checkbox">
+											<input
+												type="checkbox"
+												class="custom-control-input"
+												id="customCheck242"
+												name="example1"
+											/>
+											<label class="custom-control-label" for="customCheck242"
+												>6-8</label
+											>
+										</div>
+
+										<div class="custom-control custom-checkbox">
+											<input
+												type="checkbox"
+												class="custom-control-input"
+												id="customCheck252"
+												name="example1"
+											/>
+											<label class="custom-control-label" for="customCheck252"
+												>9-12</label
+											>
+										</div>
+
+										<div class="custom-control custom-checkbox">
+											<input
+												type="checkbox"
+												class="custom-control-input"
+												id="customCheck253"
+												name="example1"
+											/>
+											<label class="custom-control-label" for="customCheck253"
+												>University</label
+											>
+										</div>
+									</div>
+								</div>
+
+								<hr />
+
+								<div class="form-group">
+									<label for="">How did you hear about us?</label>
+									<select
+										class="form-control"
+										placeholder="How you did you hear about us?"
+										formControlName="hearAbout"
+										[ngClass]="{
+											'is-invalid': submitted && f.hearAbout.errors
+										}"
+									>
+										<option value="">How you did you hear about us?</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label for="">Reason for joining</label>
+									<textarea
+										class="form-control"
+										name=""
+										id=""
+										cols="30"
+										formControlName="reasonJoining"
+										[ngClass]="{
+											'is-invalid': submitted && f.reasonJoining.errors
+										}"
+										rows="10"
+										placeholder="Please describe why you are interested in joining the Infiniscope network"
+									></textarea>
+								</div>
+							</div>
+
+							<div class="signup-footer">
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="captcha">
+											<img src="assets/images/captcha.jpg" alt="" />
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="captcha-info">
+											<p>
+												By requesting educator access, you agree to our Terms
+												and Privacy Policy
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12">
+										<div class="btn-groups signup-btns">
+											<button class="btn btn-primary btn-blue">
+												Request Educator Access
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+						<div class="educator-not">
+							<div class="row">
+								<div class="col-lg-8">
+									<p>
+										Not an Educator? You can access
+										<a href="#" class="text-link">exploratory activities </a
+										>from the home page without having to sign up!
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</main>

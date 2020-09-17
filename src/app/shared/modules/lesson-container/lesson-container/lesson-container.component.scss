@@ -1,0 +1,28 @@
+.lessonContainer {
+	.title {
+		font-family: 'Montserrat', sans-serif;
+	}
+	.sliderContainer {
+		margin: -100px 0px;
+		position: relative;
+		height: 540px;
+		overflow-x: hidden;
+		overflow-y: visible;
+		app-lesson-card {
+			position: absolute;
+			top: 0px;
+			margin: 119px 0px;
+		}
+	}
+	.sliderArrowContainer {
+		margin: -100px 0px;
+		height: 540px;
+		.sideArrow {
+			margin: 127px 0px;
+			color: white;
+			font-size: 25px;
+			background-color: var(--color-darkish);
+			cursor: pointer;
+		}
+	}
+}

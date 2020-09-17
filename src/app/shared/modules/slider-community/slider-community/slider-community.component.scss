@@ -1,0 +1,104 @@
+/*
+* Slider Community Component SCSS
+*/
+
+.text-white {
+	color: #ebebeb !important;
+}
+
+.hive {
+	.knowMore {
+		text-decoration: underline;
+		color: #ebebeb;
+		cursor: pointer;
+	}
+
+	.join {
+		background-color: #ffbc4e;
+		color: #222222;
+		cursor: pointer;
+	}
+}
+
+.contentContainer {
+	background-color: rgba(0, 0, 0, 0.6);
+	color: #999999;
+
+	.cardContainer {
+		.cardContent {
+			background-color: #222222;
+
+			.date {
+				font-size: 0.9rem;
+			}
+
+			.position-absolute {
+				bottom: 0.5rem;
+			}
+		}
+	}
+}
+.community-row {
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.4);
+	.common-post-event-root {
+		background-color: transparent;
+		.post-event-card-box {
+			background-color: transparent;
+			.cardContent {
+				background-color: #0f1721 !important;
+				padding-bottom: 5rem !important;
+			}
+
+			.community-title {
+				font-size: 20px;
+				line-height: 27px;
+			}
+			.prag-text {
+				color: #fcbb42 !important;
+				line-height: 20px;
+				p {
+					color: #fcbb42 !important;
+					line-height: 20px;
+				}
+			}
+		}
+	}
+
+	.community-footer {
+		.post-name {
+			font-size: 13px;
+			line-height: 20px;
+			margin: 0 0 2px 0;
+			color: #ebebeb;
+		}
+
+		.date {
+			width: calc(100% - 120px);
+		}
+		.post-comment-main {
+			width: 120px;
+			display: flex;
+			align-items: flex-end;
+			.post-comment {
+				font-size: 14px;
+				line-height: 20px;
+				margin: 0 0 2px 0;
+				color: #ebebeb;
+				.fas {
+					line-height: inherit;
+				}
+			}
+			.post-like {
+				font-size: 14px;
+				line-height: 20px;
+				margin: 0 0 2px 0;
+				color: #ebebeb;
+
+				.fas {
+					line-height: inherit;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,299 @@
+<div
+	class="search-filter"
+	[ngClass]="searchStatus ? 'search-filter-collaps' : ''"
+>
+	<div class="search-heading">
+		<h3>Search Filters</h3>
+		<a class="btn-collaps" (click)="searchToggel()">
+			<i class="fas fa-chevron-left"></i>
+		</a>
+	</div>
+	<form [formGroup]="searchform">
+		<div class="search-control">
+			<div class="exploring-div">
+				<h3>Exploring</h3>
+				<form>
+					<div
+						class="custom-control custom-checkbox"
+						*ngFor="let exploring of explorings; let i = index"
+					>
+						<input
+							type="checkbox"
+							class="custom-control-input"
+							id="exploring{{ i }}"
+							value="{{ exploring.name }}"
+							(change)="onExploringChange($event)"
+						/>
+						<label class="custom-control-label" for="exploring{{ i }}">{{
+							exploring.name
+						}}</label>
+					</div>
+				</form>
+			</div>
+
+			<div class="createdby-div">
+				<h3>Created By</h3>
+				<form>
+					<div class="custom-control custom-checkbox">
+						<input
+							type="checkbox"
+							class="custom-control-input"
+							id="all-createby"
+							(change)="selectAllCreateby($event)"
+							name="example1"
+						/>
+						<label class="custom-control-label" for="all-createby"
+							>All Creators</label
+						>
+					</div>
+					<div class="group-checkbox">
+						<div
+							class="custom-control custom-checkbox"
+							*ngFor="let createdby of createdBys; let i = index"
+						>
+							<input
+								type="checkbox"
+								class="custom-control-input"
+								id="created-by{{ i }}"
+								(change)="onCreatedByChange($event)"
+								value="{{ createdby.name }}"
+								[checked]="checkCreateby"
+							/>
+							<label class="custom-control-label" for="created-by{{ i }}">{{
+								createdby.name
+							}}</label>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="range-div">
+				<h3>Grade Range</h3>
+				<form>
+					<div
+						class="custom-control custom-radio"
+						*ngFor="let grade of gradeRanges; let i = index"
+					>
+						<input
+							type="checkbox"
+							class="custom-control-input"
+							id="range{{ i }}"
+							value="{{ grade.name }}"
+							(change)="onGradeRangeChange($event)"
+							name="range"
+							[checked]="i == 1 || i == 2 ? 'checked' : ''"
+						/>
+						<label class="custom-control-label" for="range{{ i }}">{{
+							grade.name
+						}}</label>
+					</div>
+				</form>
+			</div>
+
+			<div class="topic-div">
+				<h3>Topics</h3>
+				<!--<div class="form-group">
+				<input type="text" class="form-control" />
+				<button type="button" class="btn btn-search">
+					<i class="fas fa-search"></i>
+				</button>
+			</div>-->
+				<div class="form-group">
+					<input
+						[(ngModel)]="selected"
+						[(typeahead)]="topics"
+						formControlName="searchTopic"
+						class="form-control"
+					/>
+					<button type="button" class="btn btn-search">
+						<i class="fas fa-search"></i>
+					</button>
+				</div>
+				<ng-template
+					let-matches="matches"
+					let-query="query"
+					let-typeaheadTemplateMethods
+				>
+					<ul class="custom-list-group" [class.dropdown-menu]="isBs3">
+						<li
+							class="custom-list-group-item"
+							*ngFor="let match of matches"
+							[class.active]="typeaheadTemplateMethods.isActive(match)"
+							(click)="typeaheadTemplateMethods.selectMatch(match, $event)"
+							(mouseenter)="typeaheadTemplateMethods.selectActive(match)"
+						>
+							{{ match.item }}
+						</li>
+					</ul>
+				</ng-template>
+			</div>
+
+			<div class="mostpopular-div">
+				<h3>Most Popular</h3>
+				<div class="tag-list">
+					<span
+						*ngFor="let popular of mostPopulars; let i = index"
+						class="tag"
+						(click)="activateClass(popular)"
+						[ngClass]="{ active: popular.active }"
+					>
+						{{ popular.name }}
+					</span>
+					<span class="tags" [ngClass]="tagsShow ? 'tags-show' : ''">
+						<a class="tag">Tag F</a>
+						<a class="tag">Tag G</a>
+						<a class="tag">Tag H</a>
+					</span>
+					<a (click)="showAll()" class="showall">{{
+						tagsShow ? '-Show less' : '+Show all'
+					}}</a>
+				</div>
+			</div>
+
+			<div class="audinece-div">
+				<h3>Audience Type</h3>
+				<form>
+					<div class="custom-control custom-checkbox selected">
+						<input
+							type="checkbox"
+							class="custom-control-input"
+							name="all-audience"
+							id="all-audience"
+							(change)="selectAllAudience($event)"
+						/>
+						<label class="custom-control-label" for="all-audience">All</label>
+					</div>
+					<h4>Formal</h4>
+					<div class="group-checkbox">
+						<div
+							class="custom-control custom-checkbox"
+							*ngFor="let audience of formalAudienceTypes; let i = index"
+						>
+							<input
+								type="checkbox"
+								class="custom-control-input"
+								id="formal{{ i }}"
+								value="{{ audience.title }}"
+								(change)="onAudienceTypeChange($event)"
+								[checked]="checkAudience"
+							/>
+							<label class="custom-control-label" for="formal{{ i }}">{{
+								audience.title
+							}}</label>
+						</div>
+					</div>
+					<h4>Informal</h4>
+					<div class="group-checkbox">
+						<div
+							class="custom-control custom-checkbox"
+							*ngFor="let audiences of inFormalAudienceTypes; let i = index"
+						>
+							<input
+								type="checkbox"
+								class="custom-control-input"
+								id="informal{{ i }}"
+								value="{{ audiences.title }}"
+								(change)="onAudienceTypeChange($event)"
+								[checked]="checkAudience"
+							/>
+							<label class="custom-control-label" for="informal{{ i }}">{{
+								audiences.title
+							}}</label>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="language-div">
+				<h3>Languages</h3>
+				<form>
+					<div class="custom-control custom-checkbox selected">
+						<input
+							type="checkbox"
+							class="custom-control-input"
+							id="all-languages"
+							name="all-languages"
+							(change)="selectAllLanguage($event)"
+						/>
+						<label class="custom-control-label" for="all-languages">All</label>
+					</div>
+					<h4>Supported</h4>
+					<div class="group-checkbox">
+						<div
+							class="custom-control custom-checkbox"
+							*ngFor="let language of languages; let i = index"
+						>
+							<input
+								type="checkbox"
+								class="custom-control-input"
+								id="language{{ i }}"
+								value="{{ language.name }}"
+								(change)="onLanguageChange($event)"
+								[checked]="checkLanguage"
+							/>
+							<label class="custom-control-label" for="language{{ i }}">{{
+								language.name
+							}}</label>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="campatiblity-div">
+				<h3>Hardware Compatibility</h3>
+				<form>
+					<div class="custom-control custom-checkbox selected">
+						<input
+							type="checkbox"
+							class="custom-control-input"
+							id="all-hardwares"
+							name="all-hardwares"
+							(change)="selectAllHardware($event)"
+						/>
+						<label class="custom-control-label" for="all-hardwares">All</label>
+					</div>
+					<h4>Hardware</h4>
+					<div class="group-checkbox">
+						<div
+							class="custom-control custom-checkbox"
+							*ngFor="let browser of browsers; let i = index"
+						>
+							<input
+								type="checkbox"
+								class="custom-control-input"
+								id="browser-hardware{{ i }}"
+								value="{{ browser.title }}"
+								(change)="onHardwareChange($event)"
+								[checked]="checkHardware"
+							/>
+							<label
+								class="custom-control-label"
+								for="browser-hardware{{ i }}"
+								>{{ browser.title }}</label
+							>
+						</div>
+					</div>
+					<h4>Browser</h4>
+					<div class="group-checkbox">
+						<div
+							class="custom-control custom-checkbox"
+							*ngFor="let operating of operatingSystems; let i = index"
+						>
+							<input
+								type="checkbox"
+								class="custom-control-input"
+								id="os-hardware{{ i }}"
+								value="{{ operating.title }}"
+								(change)="onHardwareChange($event)"
+								[checked]="checkHardware"
+							/>
+							<label class="custom-control-label" for="os-hardware{{ i }}">{{
+								operating.title
+							}}</label>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</form>
+</div>

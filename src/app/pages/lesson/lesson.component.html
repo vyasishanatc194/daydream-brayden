@@ -1,0 +1,352 @@
+<main role="main" class="flex-shrink-0 middle-section" *ngIf="loadFlag">
+	<div class="middle-inner">
+		<section class="banner-inner-page">
+			<div class="banner-inner-div" [style.background]="'url(' + apiUrl + '/' + lesson.cardImage.url + ') no-repeat'"></div>
+
+			<div class="banner-inner-content">
+				<div class="container">
+					<div class="banner-details">
+						<div class="playbutton">
+							<a href="#" data-toggle="modal" data-target="#modal-video">
+								<img src="../../../assets/images/icon/play-btn.png" alt="" />
+							</a>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="banner-top">
+									<h3>{{ lesson.title }}</h3>
+									<p>Release Date {{lesson.createdAt | date:'longDate'}} <span>Version 1.0</span></p>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col col-custom">
+								<div class="banner-bottom">
+									<a href="#" class="btn"
+										><img
+											src="../../../assets/images/icon/community.png"
+											alt=""
+										/>
+										Community<span> Contribution</span></a
+									>
+								</div>
+							</div>
+							<div class="col-auto text-right">
+								<div class="banner-bottom-share">
+									<ul>
+										<li>
+											<a href="#">
+												<i class="fa fa-bookmark"></i>
+												10
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<i class="fa fa-heart"></i>
+												40
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<i class="fa fa-share-alt"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="lession-section">
+			<div class="section-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-md-4 br-01">
+							<div class="lession-content-left">
+								<div class="content">
+									<h3>Lesson Info</h3>
+
+									<div class="lession-item">
+										<ul>
+											<li>
+												<span
+													><i class="fa fa-stopwatch"></i> {{ lesson.duration }}
+												</span>
+											</li>
+											<li>
+												<span><i class="fa fa-eye"></i> 0,000,000 +</span>
+											</li>
+											<li>
+												<span><i class="fa fa-share-square"></i> 35</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="content">
+									<h3>Lesson Resources</h3>
+
+									<a href="#">
+										<span>
+											<i class="far fa-file-alt"></i>
+										</span>
+										Middle School Classroom Lesson
+									</a>
+								</div>
+
+								<div class="content">
+									<h3>Alignment Douments</h3>
+
+									<a href="#">
+										<span>
+											<i class="far fa-file-alt"></i>
+										</span>
+										NGSS Middle School
+									</a>
+
+									<a href="#">
+										<span>
+											<i class="far fa-file-alt"></i>
+										</span>
+										NRC Framework Middle School
+									</a>
+
+									<a href="#">
+										<span>
+											<i class="far fa-file-alt"></i>
+										</span>
+										CCSS Middle School
+									</a>
+
+									<a href="#">
+										<span>
+											<i class="far fa-file-alt"></i>
+										</span>
+										21st Century Skills Middle School
+									</a>
+								</div>
+
+								<div class="content">
+									<h3>Technical Details</h3>
+									<p>{{ lesson.technicalDetails }}</p>
+
+									<div class="tech-support">
+										<div class="tech-box">
+											<img
+												src="../../../assets/images/icon/safari.png"
+												alt=""
+											/>
+											<p>safari</p>
+										</div>
+
+										<div class="tech-box">
+											<img
+												src="../../../assets/images/icon/chrome.png"
+												alt=""
+											/>
+											<p>Chorme</p>
+										</div>
+
+										<div class="tech-box">
+											<img
+												src="../../../assets/images/icon/firfox.png"
+												alt=""
+											/>
+											<p>Firefox</p>
+										</div>
+									</div>
+
+									<p>Latest browser version supported</p>
+
+									<div class="tech-support">
+										<div class="tech-box">
+											<span class="icon-tech">
+												<i class="fa fa-mobile-alt"></i>
+											</span>
+											mo
+											<p>Tablet</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="content content-language">
+									<h3>Languages</h3>
+									<p *ngFor="let lang of lesson.languages">{{ lang.name }}</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-9 col-md-8">
+							<div class="lession-content-right">
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="content">
+											<h3>Lesson Description</h3>
+											<p>{{ lesson.description }}</p>
+										</div>
+
+										<div class="content">
+											<h3>Central Question</h3>
+											<p>{{ lesson.centralQuestion }}</p>
+										</div>
+
+										<div class="content">
+											<h3>Instructional Objective</h3>
+											<p>{{ lesson.instructionalObjective }}</p>
+										</div>
+
+										<div class="content">
+											<h3>Topics</h3>
+											<div class="topic-tag">
+												<ul>
+													<li *ngFor="let topic of lesson.topics">
+														<a href="#">{{ topic.title }}</a>
+													</li>
+													<li>
+														<a href="" class="add-tag">Add a tag</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6">
+										<div class="content">
+											<h3>Learning Outcomes</h3>
+
+											<div class="lernig-outcome">
+												<ul>
+													<li>{{ lesson.learningOutcomes}}
+													</li>
+													
+												</ul>
+											</div>
+
+											<div class="content pre-requesti">
+												<h3>Prerequisites</h3>
+
+												<ul>
+													<li>{{ lesson.prerequisites}}</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<hr class="bt-01" />
+								<div class="row">
+									<div class="col-lg-12">
+										<div class="content">
+											<h3>Teach with This Lesson</h3>
+											<p>
+												There are three ways to teach with this lesson. Select
+												the option that best fits the needs of you and your
+												learners.
+											</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="row row-10">
+									<div class="col-lg-4 pad-10">
+										<div class="learn-card">
+											<h3>Do you want to</h3>
+											<div class="learn-card-body">
+												<ul>
+													<li>open this lesson?</li>
+													<li>preview this lesson?</li>
+													<li>use this lesson with your learners?</li>
+												</ul>
+												<div class="learn-card-footer">
+													<a href="#" class="btn btn-blue"
+														>Launch to get started</a
+													>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-4 pad-10">
+										<div class="learn-card">
+											<h3>Do you want to</h3>
+											<div class="learn-card-body">
+												<ul>
+													<li>enroll your learners in the lesson?</li>
+													<li>collect data on your learners?</li>
+													<li>monitor your learners’ progress?</li>
+													<li>
+														integrate the lesson into your pre-existing online
+														course?
+													</li>
+												</ul>
+
+												<div class="learn-card-footer">
+													<a href="#" class="btn btn-blue disabled"
+														>Enroll to get started</a
+													>
+													<span class="text-required">
+														* Login Required
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-4 pad-10">
+										<div class="learn-card">
+											<h3>Do you want to</h3>
+											<div class="learn-card-body">
+												<ul>
+													<li>customize the lesson for your learners?</li>
+													<li>
+														enroll your learners in the customized version?
+													</li>
+													<li>
+														share your customized version with the infiniscope
+														Teaching Network?
+													</li>
+												</ul>
+
+												<div class="learn-card-footer">
+													<a href="#" class="btn btn-blue disabled"
+														>Customize to get started</a
+													>
+													<span class="text-required">* Login Required</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</main>
+
+<div class="modal fade modal-video" id="modal-video">
+	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-body">
+				<iframe
+					width="100%"
+					height="100%"
+					src="https://www.youtube.com/embed/nWwpyclIEu4"
+					frameborder="0"
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen
+				></iframe>
+			</div>
+		</div>
+	</div>
+</div>

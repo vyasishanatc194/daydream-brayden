@@ -1,0 +1,127 @@
+<div [ngClass]="currentPage == '/search' ? 'community-row' : ''">
+	<div class="common-title-header-div">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 left-title">
+				<div class="heading-left">
+					<div class="heading">
+						<h2>Community</h2>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 right-title">
+				<div class="heading-right">
+					<div class="button-group-box">
+						<a href="#" class="btn btn-link mr-20">What's the Hive?</a>
+						<a href="#" class="btn btn-join">Join the Hive!</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div
+		class="row col-12 mx-0 p-2 mb-4 contentContainer"
+		[ngClass]="currentPage == '/search' ? 'common-post-event-root' : ''"
+	>
+		<div
+			class="col-3 p-2 cardContainer d-lg-block d-none"
+			[ngClass]="currentPage == '/search' ? 'post-event-card-box' : ''"
+			*ngFor="let post of getCommunityPostsBySize(4)"
+		>
+			<div class="col-12 p-2 h-100 pb-5 position-relative cardContent">
+				<div
+					class="col-12 mx-0 px-0 text-white font-weight-bold community-title"
+				>
+					{{ post.title }}
+				</div>
+				<div class="col-12 mx-0 px-0 my-4 text-white prag-text">
+					{{ post.content }}
+				</div>
+				<div
+					class="row col-12 mx-0 pl-0 pr-3 position-absolute community-footer"
+				>
+					<div class="col-12 mx-0 px-0 text-white post-name">
+						{{ post.name }}
+					</div>
+					<div class="col-8 mx-0 px-0 date">
+						{{ post.date | date: 'MMMM d, yyyy, hh:mm a' }}
+					</div>
+					<div class="row col-4 mx-0 px-0 text-white post-comment-main">
+						<div class="row col-6 mx-0 px-0 text-center post-comment">
+							<i class="col-6 mx-0 px-0 fas fa-comment-alt"></i>
+							<small class="col-6 mx-0 px-0">{{ post.comments }}</small>
+						</div>
+						<div class="row col-6 mx-0 px-0 text-center post-like">
+							<i class="col-6 mx-0 px-0 fas fa-heart"></i>
+							<small class="col-6 mx-0 px-0">{{ post.likes }}</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div
+			class="col-6 p-2 cardContainer d-md-block d-lg-none d-none"
+			[ngClass]="currentPage == '/search' ? 'post-event-card-box' : ''"
+			*ngFor="let post of getCommunityPostsBySize(2)"
+		>
+			<div class="col-12 p-2 h-100 pb-5 position-relative cardContent">
+				<div class="col-12 mx-0 px-0 text-white font-weight-bold">
+					{{ post.title }}
+				</div>
+				<div class="col-12 mx-0 px-0 my-4 text-white">
+					{{ post.content }}
+				</div>
+				<div class="row col-12 mx-0 pl-0 pr-3 position-absolute">
+					<div class="col-12 mx-0 px-0 text-white">
+						{{ post.name }}
+					</div>
+					<div class="col-8 mx-0 px-0 date">
+						{{ post.date | date: 'MMMM d, yyyy, hh:mm a' }}
+					</div>
+					<div class="row col-4 mx-0 px-0 text-white">
+						<div class="row col-6 mx-0 px-0 text-center">
+							<i class="col-6 mx-0 px-0 fas fa-comment-alt"></i>
+							<small class="col-6 mx-0 px-0">{{ post.comments }}</small>
+						</div>
+						<div class="row col-6 mx-0 px-0 text-center">
+							<i class="col-6 mx-0 px-0 fas fa-heart"></i>
+							<small class="col-6 mx-0 px-0">{{ post.likes }}</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div
+			class="col-12 p-2 cardContainer d-sm-block d-xs-none d-md-none d-lg-none"
+			[ngClass]="currentPage == '/search' ? 'post-event-card-box' : ''"
+			*ngFor="let post of getCommunityPostsBySize(1)"
+		>
+			<div class="col-12 p-2 h-100 pb-5 position-relative cardContent">
+				<div class="col-12 mx-0 px-0 text-white font-weight-bold">
+					{{ post.title }}
+				</div>
+				<div class="col-12 mx-0 px-0 my-4 text-white">
+					{{ post.content }}
+				</div>
+				<div class="row col-12 mx-0 pl-0 pr-3 position-absolute">
+					<div class="col-12 mx-0 px-0 text-white">
+						{{ post.name }}
+					</div>
+					<div class="col-8 mx-0 px-0 date">
+						{{ post.date | date: 'MMMM d, yyyy, hh:mm a' }}
+					</div>
+					<div class="row col-4 mx-0 px-0 text-white">
+						<div class="row col-6 mx-0 px-0 text-center">
+							<i class="col-6 mx-0 px-0 fas fa-comment-alt"></i>
+							<small class="col-6 mx-0 px-0">{{ post.comments }}</small>
+						</div>
+						<div class="row col-6 mx-0 px-0 text-center">
+							<i class="col-6 mx-0 px-0 fas fa-heart"></i>
+							<small class="col-6 mx-0 px-0">{{ post.likes }}</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

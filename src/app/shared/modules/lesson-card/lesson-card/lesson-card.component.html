@@ -1,0 +1,249 @@
+<div class="cardContainer">
+	<div
+		class="cardThumbnailContainer px-2 pb-2 pt-1"
+		(mouseover)="openCard = true"
+	>
+		<div class="title mb-3 text-white font-weight-bold">
+			{{
+				lesson.title.length > 16
+					? (lesson.title | slice: 0:16) + '...'
+					: lesson.title
+			}}
+		</div>
+		<div class="content">
+			<img
+				src="{{ apiUrl + '/' + lesson.thumbnail.url }}"
+				width="100%"
+				height="230px"
+			/>
+		</div>
+	</div>
+	<!-- Flip Card Front -->
+	<div
+		class="cardFrontContainer row mx-0 px-2 pb-2 pt-1"
+		*ngIf="openCard"
+		(mouseout)="closeCard($event, this)"
+		[ngClass]="{ left: left, right: right, delay: flippedCard }"
+	>
+		<div class="col-8 mx-0 px-0 title mb-3 text-white font-weight-bold">
+			{{
+				lesson.title.length > 32
+					? (lesson.title | slice: 0:32) + '...'
+					: lesson.title
+			}}
+		</div>
+		<div class="flipCard col-4 mx-0 px-0 text-right" (click)="toggleFlip()">
+			<img src="assets/images/flip-left.svg" /> Flip Card
+		</div>
+		<div class="col-12 mx-0 px-0">
+			<img
+				src="{{ apiUrl + '/' + lesson.thumbnail.url }}"
+				width="100%"
+				height="230px"
+			/>
+		</div>
+		<div class="lessonDescription text-white my-1">
+			{{
+				lesson.description.length < 250
+					? lesson.description
+					: (lesson.description | slice: 0:250) + '...'
+			}}
+		</div>
+		<hr class="col-12 mx-0 px-0 my-2" />
+		<div class="row col-12 mx-0 px-0">
+			<div class="row col-6 mx-0 px-0 color-faded">
+				<div class="row col-3 mx-0 px-0">
+					<i class="col-5 mx-0 px-0 far fa-clock align-self-center"></i>
+					<span class="col-7 mx-0 px-0 minimetricsInfo align-self-center"
+						>{{ lesson.duration }} m</span
+					>
+				</div>
+				<div class="row col-3 mx-0 px-0">
+					<i class="col-5 mx-0 px-0 fas fa-mobile-alt align-self-center"></i>
+					<span class="col-7 mx-0 px-0 minimetricsInfo align-self-center">{{
+						lesson.responsive ? 'Yes' : 'No'
+					}}</span>
+				</div>
+				<div class="row col-3 mx-0 px-0">
+					<i class="col-5 mx-0 px-0 fas fa-globe align-self-center"></i>
+					<span class="col-7 mx-0 px-0 minimetricsInfo align-self-center">{{
+						reduceLanguages(lesson)
+					}}</span>
+				</div>
+			</div>
+
+			<div class="row col-6 mx-0 px-0 color-faded">
+				<div class="row col-4 mx-0 px-0">
+					<i class="col-4 mx-0 px-0 far fa-heart align-self-center"></i>
+					<span class="col-8 mx-0 px-0 minimetricsInfo align-self-center"
+						>40</span
+					>
+				</div>
+				<div class="row col-2 mx-0 px-0">
+					<i class="fas fa-share-alt align-self-center"></i>
+				</div>
+				<div class="row col-6 mx-0 px-0">
+					<button class="w-100 py-2 text-white">Launch</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Flip Card Back -->
+	<div
+		class="cardBackContainer row mx-0 px-2 pb-2 pt-1"
+		*ngIf="openCard"
+		(mouseout)="closeCard($event, this)"
+		[ngClass]="{ left: left, right: right, delay: !flippedCard }"
+	>
+		<!-- Title -->
+		<div class="col-8 mx-0 px-0 title mb-3 text-white font-weight-bold">
+			{{
+				lesson.title.length > 32
+					? (lesson.title | slice: 0:32) + '...'
+					: lesson.title
+			}}
+		</div>
+		<div class="flipCard col-4 mx-0 px-0 text-right" (click)="toggleFlip()">
+			<img src="assets/images/flip-left.svg" /> Flip Card
+		</div>
+		<!-- Image and description -->
+		<div class="col-5 mx-0 px-0">
+			<img
+				src="{{ apiUrl + '/' + lesson.thumbnail.url }}"
+				width="100%"
+				height="230px"
+			/>
+		</div>
+		<div class="col-7 mx-0 px-0">
+			<div class="lessonDescription col-12 mx-0 pl-2 text-white">
+				{{ lesson.description | slice: 0:200 }}
+				<br />
+				<a class="color-primary clickable" [routerLink]="['/lesson', lesson._id]">Read more</a>
+			</div>
+			<div class="row col-12 mx-0 px-0 mt-4 color-primary">
+				<div class="row col-7 mx-0 px-3">
+					<div class="row col-5 mx-0 px-0">
+						<i class="col-4 mx-0 px-0 far fa-bookmark align-self-center"></i>
+						<span class="col-8 mx-0 pl-1 minimetricsInfo align-self-center"
+							>40</span
+						>
+					</div>
+					<div class="row col-5 mx-0 px-0">
+						<i class="col-4 mx-0 px-0 far fa-heart align-self-center"></i>
+						<span class="col-8 mx-0 pl-1 minimetricsInfo align-self-center"
+							>40</span
+						>
+					</div>
+					<div class="row col-2 mx-0 px-0">
+						<i class="fas fa-share-alt align-self-center"></i>
+					</div>
+				</div>
+				<div class="col-5 mx-0 px-0">
+					<button class="w-100 py-2 text-white" [routerLink]="['/lesson', lesson._id]">
+						Learn more
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- Lesson Info -->
+		<hr class="col-12 mx-0 px-0 my-2" />
+		<div class="lessonInfos row col-12 mx-0 px-0">
+			<div class="borderFadded row col-6 mx-0 px-0 border-right">
+				<div
+					class="title col-12 mx-0 px-0 mb-2 text-white text-center font-weight-bold"
+				>
+					Lesson Info
+				</div>
+				<div class="row col-6 mx-0 px-0 mb-2 color-primary">
+					<div class="col-4 mx-0 px-0 text-center">
+						<i class="fas fa-desktop"></i>
+					</div>
+					<div class="col-8 mx-0 px-0">
+						Technical Details (Compatibility)
+					</div>
+				</div>
+				<div class="row col-6 mx-0 px-0 mb-2 color-primary">
+					<div class="col-4 mx-0 px-0 text-center">
+						<i class="fas fa-globe"></i>
+					</div>
+					<div class="col-8 mx-0 px-0">
+						Languages
+					</div>
+				</div>
+				<div class="row col-6 mx-0 px-0 mb-2">
+					<div class="col-4 mx-0 px-0 text-center">
+						<i class="far fa-eye"></i>
+					</div>
+					<div class="col-8 mx-0 px-0">
+						0,000,000 +
+					</div>
+				</div>
+				<div class="row col-6 mx-0 px-0 mb-2">
+					<div class="col-4 mx-0 px-0 text-center">
+						<i class="fas fa-share"></i>
+					</div>
+					<div class="col-8 mx-0 px-0">
+						35
+					</div>
+				</div>
+				<div class="row col-12 mx-0 px-0">
+					<div class="col-2 mx-0 px-0 text-center">
+						<i class="fas fa-stopwatch"></i>
+					</div>
+					<div class="col-10 mx-0 px-0">
+						00h 00m - 00h 00m
+					</div>
+				</div>
+			</div>
+			<div class="row col-6 mx-0 pl-2">
+				<div
+					class="title col-12 mx-0 px-0 mb-2 text-white text-center font-weight-bold"
+				>
+					Lesson Resources
+				</div>
+				<div class="row col-12 mx-0 px-0 mb-2 color-primary">
+					<div class="col-2 mx-0 px-0 text-center">
+						<i class="far fa-file-alt"></i>
+					</div>
+					<div class="col-10 mx-0 px-0">
+						Lesson Documents
+					</div>
+				</div>
+				<div class="row col-12 mx-0 px-0 mb-2 color-primary">
+					<div class="col-2 mx-0 px-0 text-center">
+						<i class="far fa-file-alt"></i>
+					</div>
+					<div class="col-10 mx-0 px-0">
+						Alignment Documents
+					</div>
+				</div>
+				<div class="row col-12 mx-0 px-0 mb-2 color-primary">
+					<div class="col-2 mx-0 px-0 text-center">
+						<i class="far fa-check-circle"></i>
+					</div>
+					<div class="col-10 mx-0 px-0">
+						Learning Outcomes and Prerequisites
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Topics -->
+		<hr class="col-12 mx-0 px-0 my-2" />
+		<div class="topics row col-12 mx-0 px-0">
+			<div class="title col-12 mx-0 px-0 text-white font-weight-bold">
+				Topics
+			</div>
+			<div class="col-12 mx-0 px-0">
+				<div
+					class="topic px-3 mr-2 text-white"
+					*ngFor="let topic of lesson.topics"
+				>
+					{{ topic.title }}
+				</div>
+				<div class="topic px-3 mr-2 text-white">
+					Add a tag <i class="fas fa-plus-circle"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
