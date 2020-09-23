@@ -1,93 +1,18 @@
 .cardContainer {
 	position: relative;
+	.imageContainer {
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+	}
 	.cardThumbnailContainer {
 		background-color: var(--color-dark);
 		.title {
 			font-family: 'Montserrat', sans-serif;
 		}
-	}
-	.cardFrontContainer,
-	.cardBackContainer {
-		z-index: 1;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		&.left {
-			transform: translate(0%, -50%);
-			left: 0%;
-		}
-		&.right {
-			transform: translate(0%, -50%);
-			left: unset;
-			right: 0%;
-		}
-		transition: 0.25s ease-out;
-		transition-delay: 0.25s;
-		&.delay {
-			transition: 0.25s ease-in;
-			pointer-events: none;
-			transition-delay: unset;
-			transform: translate(-50%, -50%) scaleX(0);
-			&.right,
-			&.left {
-				transform: translate(0%, -50%) scaleX(0);
-			}
-		}
-		width: 500px;
-		background-color: var(--color-black);
-		.lessonDescription {
-			font-size: 15px;
-		}
-		hr,
-		.borderFadded {
-			border-color: #444 !important;
-		}
-		.color-faded {
-			color: var(--color-faded);
-		}
-		.color-primary {
-			color: var(--color-primary-vivid);
-		}
-		.clickable {
-			cursor: pointer;
-		}
-		.minimetricsInfo {
-			font-size: 10px;
-		}
-		button {
-			border: none;
-			background-color: var(--color-primary);
-			color: white;
-			border-radius: 2px;
-			font-weight: bold;
-		}
-		.flipCard {
-			color: var(--color-primary);
-			font-size: 14px;
-			cursor: pointer;
-		}
-		.lessonInfos {
-			font-size: 12px;
-			.title {
-				font-size: 15px;
-			}
-			i {
-				font-size: 20px;
-			}
-		}
-		.topics {
-			.title {
-				font-size: 13px;
-			}
-			.topic {
-				font-size: 12px;
-				background-color: var(--color-dark-grey);
-				border-radius: 10px;
-				display: inline-block;
-				cursor: pointer;
-				border: 1px solid var(--color-faded);
-			}
+		.content {
+			width: 100%;
+			height: 230px;
 		}
 	}
 }

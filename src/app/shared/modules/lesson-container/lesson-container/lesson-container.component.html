@@ -1,4 +1,15 @@
-<div class="lessonContainer row col-12 mx-0 px-0">
+<div class="lessonContainer row col-12 mx-0 px-0" #lessonContainer>
+	<app-lesson-flip-card
+		*ngIf="selectedLesson"
+		[lesson]="selectedLesson"
+		[left]="flipCardStyle.first"
+		[right]="flipCardStyle.last"
+		[head]="flipCardStyle.head"
+		[foot]="flipCardStyle.foot"
+		[ngStyle]="flipCardStyle"
+		(mouseout)="closeCard($event)"
+		(flipping)="updateFlipping($event)"
+	></app-lesson-flip-card>
 	<div class="title col-12 mx-0 px-0 my-2 pl-2" *ngIf="title">
 		<h2 class="text-white font-weight-bold my-0">{{ title }}</h2>
 	</div>
@@ -13,9 +24,10 @@
 			[lesson]="lesson"
 			[left]="i - sliderIndex === 0 && getCardSpacing() < 100"
 			[right]="i - sliderIndex === 3 && getCardSpacing() < 100"
+			(mouseenter)="openCard($event, lesson, i)"
 		></app-lesson-card>
 	</div>
-	<div class="sliderArrowContainer row col-1 mx-0 px-0" *ngIf="slider">
+	<div class="sliderArrowContainer row col-1 mx-0 px-0 py-2" *ngIf="slider">
 		<div
 			class="sideArrow offset-3 col-12 col-md-6 p-2 text-center d-flex"
 			(click)="moveSlider(true)"
@@ -26,8 +38,16 @@
 	<div class="row col-12 mx-0 px-0 my-2" *ngIf="!slider">
 		<app-lesson-card
 			class="col-lg-3 col-md-6 col-12 mx-0 p-2"
-			*ngFor="let lesson of lessons"
+			*ngFor="let lesson of lessons; let i = index"
 			[lesson]="lesson"
+			[left]="
+				i % convertSpacing(getCardSpacing()) === 0 && getCardSpacing() < 100
+			"
+			[right]="
+				i % convertSpacing(getCardSpacing()) ===
+					convertSpacing(getCardSpacing()) - 1 && getCardSpacing() < 100
+			"
+			(mouseenter)="openCard($event, lesson, i)"
 		></app-lesson-card>
 	</div>
 </div>

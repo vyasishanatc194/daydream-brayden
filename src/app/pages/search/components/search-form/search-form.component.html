@@ -1,0 +1,140 @@
+<div
+	class="search-filter"
+	[ngClass]="searchStatus ? 'search-filter-collaps' : ''"
+>
+	<div class="search-heading">
+		<h3>Search Filters</h3>
+		<a class="btn-collaps" (click)="searchToggel()">
+			<i class="fas fa-chevron-left"></i>
+		</a>
+	</div>
+	<form [formGroup]="searchform">
+		<div class="search-control">
+			<div class="exploring-div">
+				<h3>Exploring</h3>
+				<app-checkbox-group
+					[formGroup]="searchform"
+					[data]="explorings"
+					name="exploringArray"
+					id="exploring"
+				></app-checkbox-group>
+			</div>
+
+			<div class="createdby-div">
+				<h3>Created By</h3>
+				<div class="custom-control custom-checkbox">
+					<input
+						type="checkbox"
+						class="custom-control-input"
+						id="all-createby"
+						(change)="selectAllCreateby($event)"
+						name="example1"
+					/>
+					<label class="custom-control-label" for="all-createby"
+						>All Creators</label
+					>
+				</div>
+				<app-checkbox-group
+					[formGroup]="searchform"
+					[data]="createdBys"
+					name="checkArray"
+					id="created-by"
+					[checkeds]="checkCreateby"
+				></app-checkbox-group>
+			</div>
+
+			<app-grade-range
+				name="gradeRangeArray"
+				[formGroup]="searchform"
+			></app-grade-range>
+
+			<app-topics [parent]="searchform"></app-topics>
+
+			<app-most-popular></app-most-popular>
+
+			<div class="audinece-div">
+				<h3>Audience Type</h3>
+				<div class="custom-control custom-checkbox selected">
+					<input
+						type="checkbox"
+						class="custom-control-input"
+						name="all-audience"
+						id="all-audience"
+						(change)="selectAllAudience($event)"
+					/>
+					<label class="custom-control-label" for="all-audience">All</label>
+				</div>
+				<h4>Formal</h4>
+				<app-checkbox-group
+					[formGroup]="searchform"
+					[data]="formalAudienceTypes"
+					name="audienceTypeArray"
+					id="formal"
+					[checkeds]="checkAudience"
+				></app-checkbox-group>
+
+				<h4>Informal</h4>
+				<app-checkbox-group
+					[formGroup]="searchform"
+					[data]="inFormalAudienceTypes"
+					name="audienceTypeArray"
+					id="informal"
+					[checkeds]="checkAudience"
+				></app-checkbox-group>
+			</div>
+
+			<div class="language-div">
+				<h3>Languages</h3>
+				<div class="custom-control custom-checkbox selected">
+					<input
+						type="checkbox"
+						class="custom-control-input"
+						id="all-languages"
+						name="all-languages"
+						(change)="selectAllLanguage($event)"
+					/>
+					<label class="custom-control-label" for="all-languages">All</label>
+				</div>
+				<h4>Supported</h4>
+				<app-checkbox-group
+					[formGroup]="searchform"
+					[data]="languages"
+					name="languageArray"
+					id="language"
+					[checkeds]="checkLanguage"
+				></app-checkbox-group>
+			</div>
+
+			<div class="campatiblity-div">
+				<h3>Hardware Compatibility</h3>
+				<div class="custom-control custom-checkbox selected">
+					<input
+						type="checkbox"
+						class="custom-control-input"
+						id="all-hardwares"
+						name="all-hardwares"
+						(change)="selectAllHardware($event)"
+					/>
+					<label class="custom-control-label" for="all-hardwares">All</label>
+				</div>
+				<h4>Hardware</h4>
+				<app-checkbox-group
+					[formGroup]="searchform"
+					[data]="browsers"
+					name="hardwareArray"
+					id="browser-hardware"
+					[checkeds]="checkHardware"
+				></app-checkbox-group>
+
+				<h4>Browser</h4>
+				<app-checkbox-group
+					[formGroup]="searchform"
+					[data]="operatingSystems"
+					name="hardwareArray"
+					id="os-hardware"
+					[checkeds]="checkHardware"
+				></app-checkbox-group>
+			</div>
+		</div>
+	</form>
+</div>

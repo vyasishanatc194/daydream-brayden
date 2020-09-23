@@ -1,0 +1,105 @@
+.imageContainer {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.cardFrontContainer,
+.cardBackContainer {
+	z-index: 1;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	--translate-x: -50%;
+	--translate-y: -50%;
+	--scale: 1;
+	&.left {
+		--translate-x: 0%;
+		left: 0%;
+	}
+	&.right {
+		--translate-x: 0%;
+		left: unset;
+		right: 0%;
+	}
+	&.head {
+		--translate-y: 0%;
+	}
+	&.foot {
+		--translate-y: -100%;
+	}
+	.content {
+		width: 100%;
+		height: 230px;
+	}
+	transition: 0.25s ease-out;
+	transition-delay: 0.25s;
+	&.delay {
+		transition: 0.25s ease-in;
+		pointer-events: none;
+		transition-delay: unset;
+		--translate-x: -50%;
+		--scale: 0;
+		&.right,
+		&.left {
+			--translate-x: 0%;
+		}
+	}
+	transform: translate(var(--translate-x), var(--translate-y))
+		scaleX(var(--scale));
+	width: 500px;
+	background-color: var(--color-black);
+	.lessonDescription {
+		font-size: 15px;
+	}
+	hr,
+	.borderFadded {
+		border-color: #444 !important;
+	}
+	.color-faded {
+		color: var(--color-faded);
+	}
+	.color-primary {
+		color: var(--color-primary-vivid);
+	}
+	.clickable {
+		cursor: pointer;
+	}
+	.minimetricsInfo {
+		font-size: 10px;
+	}
+	button {
+		border: none;
+		background-color: var(--color-primary);
+		color: white;
+		border-radius: 2px;
+		font-weight: bold;
+	}
+	.flipCard {
+		color: var(--color-primary);
+		font-size: 14px;
+		cursor: pointer;
+	}
+	.lessonInfos {
+		font-size: 12px;
+		.title {
+			font-size: 15px;
+		}
+		i {
+			font-size: 20px;
+		}
+	}
+	.topics {
+		.title {
+			font-size: 13px;
+		}
+		.topic {
+			font-size: 12px;
+			background-color: var(--color-dark-grey);
+			border-radius: 10px;
+			display: inline-block;
+			cursor: pointer;
+			border: 1px solid var(--color-faded);
+		}
+	}
+}

@@ -1,0 +1,37 @@
+.range-div {
+	margin-bottom: 15px;
+	h3 {
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 700;
+		color: #ffffff;
+	}
+	.custom-control {
+		padding: 0;
+		display: inline-block;
+		margin-right: 5px;
+		label {
+			display: block;
+			padding: 8px 11px;
+			background-color: #333333;
+			border: 2px solid #3398b9;
+		}
+	}
+	.custom-radio .custom-control-label::before {
+		display: none;
+	}
+	.custom-control-input:checked ~ .custom-control-label::before {
+		display: none !important;
+	}
+	.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+		display: none;
+	}
+	.custom-control-input:checked ~ .custom-control-label {
+		background-color: #3398b9;
+	}
+}
+.custom-control-label {
+	font-size: 16px;
+	line-height: 24px;
+	color: #ffffff;
+}

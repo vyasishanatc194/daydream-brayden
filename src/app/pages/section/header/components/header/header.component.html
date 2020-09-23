@@ -1,0 +1,66 @@
+<header
+	class="header"
+	[class.search-header]="currentPage === '/search'"
+	[ngClass]="
+		currentPage === '/search' || educatorModeOn ? 'header-color2 ' : ''
+	"
+>
+	<!-- Fixed navbar -->
+	<nav
+		class="navbar navbar-expand-md navbar-dark"
+		#stickyMenu
+		[class.fixed-top]="sticky"
+	>
+		<div class="main-header">
+			<div class="container-fluid">
+				<div class="row row-100 col-header">
+					<div class="col-lg-12 col">
+						<div class="logo-heder">
+							<div class="container p-0">
+								<a
+									class="navbar-brand smoth-scroll show-in-web"
+									href="javascript:void(0)"
+									(click)="gotoRoute('/')"
+									*ngIf="pageData.logo"
+								>
+									<img
+										src="{{ environment.api_url }}{{ pageData.logo.url }}"
+										class="menu-logo"
+										alt=""
+									/>
+								</a>
+								<a
+									class="navbar-brand smoth-scroll show-in-mobile"
+									href="javascript:void(0)"
+									(click)="gotoRoute('/')"
+								>
+									<img
+										src="assets/images/mobile-logo.png"
+										class="menu-logo"
+										alt=""
+									/>
+								</a>
+							</div>
+						</div>
+						<div class="header-control">
+							<div class="search-bar">
+								<!-- Educator Mode -->
+								<app-educator-mode></app-educator-mode>
+								<!-- Search Bar -->
+								<app-search-bar class="mw-475"></app-search-bar>
+							</div>
+
+							<div class="top-header-right">
+								<app-profile></app-profile>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Sub Header -->
+		<app-sub-header class="w-100"></app-sub-header>
+	</nav>
+</header>
+<router-outlet></router-outlet>

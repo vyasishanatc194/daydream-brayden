@@ -1,0 +1,44 @@
+.custom-control-label {
+	font-size: 16px;
+	line-height: 24px;
+	color: #ffffff;
+}
+.custom-checkbox .custom-control-label::before {
+	color: #fff;
+	background-color: transparent;
+	border: 3px solid #c2c2c2;
+	border-radius: 0;
+	left: -30px;
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+	color: #fff;
+	background-color: #006586;
+	border: 3px solid #006586;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+	background-image: url('../../../../../../assets/images/check.png');
+	width: 11px !important;
+	height: 7px !important;
+	background-position: center;
+	left: -27px;
+	top: 9px;
+	background-size: cover;
+}
+
+.custom-checkbox.selected
+	.custom-control-input:checked
+	~ .custom-control-label::after {
+	background-image: url('../../../../../../assets/images/cutom-check.png');
+	height: 3px !important;
+	top: 11px;
+}
+.group-checkbox {
+	padding-left: 40px;
+	.custom-control {
+		margin-left: 10px;
+	}
+}
+.expl .custom-control.custom-checkbox {
+	margin-left: 30px !important;
+}

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
 import { ISubscription } from 'rxjs/Subscription';
-import { ApiService } from 'src/app/services/api.service';
 import { environment } from 'src/environments/environment';
-import { EventService } from 'src/app/services/event.service';
 import { Lesson } from 'src/app/model/lesson.model';
+import { ApiService } from 'src/app/services/API/api.service';
+import { EventService } from 'src/app/services/event/event.service';
 
 @Component({
 	selector: 'app-home',
@@ -38,78 +38,6 @@ export class HomeComponent implements OnInit {
 				this.slides = res;
 			});
 	}
-
-	featureOptions: OwlOptions = {
-		loop: true,
-		margin: 0,
-		smartSpeed: 2000,
-		autoplay: false,
-		autoplayHoverPause: true,
-		dots: false,
-		nav: true,
-		navText: [
-			'<span class="span-roundcircle left-roundcircle"><i class="fas fa-chevron-left"></i></span>',
-			'<span class="span-roundcircle owlnext-custom"><i class="fas fa-chevron-right "></i></span>'
-		],
-		responsive: {
-			0: {
-				items: 2,
-				nav: true
-			},
-			768: {
-				items: 2,
-				nav: false
-			},
-
-			1000: {
-				items: 3,
-				nav: true
-			},
-			1025: {
-				items: 4,
-				nav: true,
-				loop: true
-			}
-		}
-	};
-
-	newestOptions: OwlOptions = {
-		loop: true,
-		center: false,
-		mouseDrag: true,
-		stagePadding: 70,
-		margin: 0,
-		smartSpeed: 2000,
-		autoplay: false,
-		autoplayHoverPause: true,
-		dots: false,
-		autoHeight: true,
-		nav: true,
-		navText: [
-			'<span class="span-roundcircle left-roundcircle"><i class="fas fa-chevron-left"></i></span>',
-			'<span class="span-roundcircle owlnext-custom"><i class="fas fa-chevron-right "></i></span>'
-		],
-		responsive: {
-			0: {
-				items: 1,
-				nav: true
-			},
-			768: {
-				items: 2,
-				nav: false
-			},
-
-			1000: {
-				items: 3,
-				nav: true
-			},
-			1025: {
-				items: 4,
-				nav: true,
-				loop: true
-			}
-		}
-	};
 
 	// Get slider data from api
 	getpageDetail(slug: any) {

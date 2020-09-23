@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { EventService } from 'src/app/services/event.service';
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/services/authentication.service';
-import { AlertService } from 'src/app/services/alert.service';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
+import { AlertService } from 'src/app/services/alert/alert.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { EventService } from 'src/app/services/event/event.service';
 
 @Component({
 	selector: 'app-sign-up',
@@ -28,7 +28,7 @@ export class SignUpComponent implements OnInit {
 			redirect_to: '',
 			dataobj: { page: this.router.url }
 		};
-		this.event.globleEvent(action_ob);
+		this.event.globalEvent(action_ob);
 
 		// redirect to home if already logged in
 		if (this.authenticationService.currentUserValue) {

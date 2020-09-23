@@ -1,0 +1,16 @@
+<div class="educator">
+	<p>Educator Mode</p>
+	<div class="switch-slider">
+		<input
+			type="checkbox"
+			class="toggle"
+			id="toggle"
+			[checked]="educatorModeOn"
+			(change)="toggleMode()"
+		/>
+		<label for="toggle">
+			<span class="on">On</span>
+			<span class="off">Off</span>
+		</label>
+	</div>
+</div>

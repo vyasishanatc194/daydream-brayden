@@ -1,0 +1,37 @@
+<div class="topic-div">
+	<h3>Topics</h3>
+	<!--<div class="form-group">
+    <input type="text" class="form-control" />
+    <button type="button" class="btn btn-search">
+        <i class="fas fa-search"></i>
+    </button>
+</div>-->
+	<div class="form-group" [formGroup]="parent">
+		<input
+			[(ngModel)]="selected"
+			[(typeahead)]="topics"
+			formControlName="searchTopic"
+			class="form-control"
+		/>
+		<button type="button" class="btn btn-search">
+			<i class="fas fa-search"></i>
+		</button>
+	</div>
+	<ng-template
+		let-matches="matches"
+		let-query="query"
+		let-typeaheadTemplateMethods
+	>
+		<ul class="custom-list-group" [class.dropdown-menu]="isBs3">
+			<li
+				class="custom-list-group-item"
+				*ngFor="let match of matches"
+				[class.active]="typeaheadTemplateMethods.isActive(match)"
+				(click)="typeaheadTemplateMethods.selectMatch(match, $event)"
+				(mouseenter)="typeaheadTemplateMethods.selectActive(match)"
+			>
+				{{ match.item }}
+			</li>
+		</ul>
+	</ng-template>
+</div>

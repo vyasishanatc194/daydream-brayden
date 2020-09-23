@@ -1,0 +1,26 @@
+<div class="mostpopular-div">
+	<h3>Most Popular</h3>
+	<div class="tag-list">
+		<span
+			*ngFor="let popular of mostPopulars | slice: 0:3; let i = index"
+			class="tag"
+			(click)="activateClass(popular)"
+			[ngClass]="{ active: popular.active }"
+		>
+			{{ popular.name }}
+		</span>
+		<span class="tags" [ngClass]="tagsShow ? 'tags-show' : ''">
+			<span
+				class="tag"
+				[ngClass]="{ active: popular.active }"
+				(click)="activateClass(popular)"
+				*ngFor="let popular of mostPopulars | slice: 3; let i = index"
+			>
+				{{ popular.name }}
+			</span>
+		</span>
+		<a (click)="showAll()" class="showall">{{
+			tagsShow ? '-Show less' : '+Show all'
+		}}</a>
+	</div>
+</div>

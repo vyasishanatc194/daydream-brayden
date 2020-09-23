@@ -19,28 +19,6 @@
     }
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1) and (max-device-width: 1024px) and (min-device-width: 768px) and (orientation: portrait) {
-    .header-control .search-bar {
-        padding-left: 190px;
-    }
-    .sidenav-new-menu .closebtn span .menu-bar-logo {
-        color: #333333;
-        font-size: 27px;
-    }
-    .sidenav-new-menu .closebtn span {
-        color: #333333;
-        font-size: 20px;
-    }
-
-    .sidenav-new-menu .closebtn {
-        background-color: #d6d6d6 !important;
-        right: 0 !important;
-    }
-
-    .sidenav-new-menu .closebtn span .menu-mobile-logo {
-        top: -1px;
-    }
-}
 
 /* nav */
 
@@ -100,9 +78,7 @@
 
 @media (max-width: 767px) {
 
-    .sidenav-new-menu .closebtn span .menu-mobile-logo {
-        height: 25px;
-    }
+
     .middle-section {
         .hero-banner-section {
             min-height: unset;
@@ -148,51 +124,19 @@
         padding: 8px 90px 0 200px !important;
     }
 
-    .header .navbar .navbar-brand {
-        margin-left: 100px !important;
-    }
-
-    .sub-header .navbar-nav {
-        max-width: 930px !important;
-    }
-
-    .fixed-top.navbar a.navbar-brand {
-        margin-left: 0 !important;
-    }
+  
 }
 
-@media (max-width: 1920px) and (min-width: 1300px) {
-    .logo-heder a img {
-        margin-left: -8px;
-    }
-}
+
 
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
-    .sub-header .navbar-nav {
-        max-width: 945px !important;
-    }
+
     .middle-section .hero-banner-section .item .slide-owl .hero-container-box {
         padding: 0 90px 0 200px !important;
     }
-
-    .header .navbar .navbar-brand {
-        margin-left: 105px !important;
-    }
-
-    .header .navbar.fixed-top .navbar-brand {
-        margin-left: 0 !important;
-    }
 }
 
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-    .header .navbar .navbar-brand {
-        margin-left: 155px !important;
-    }
 
-    .header .fixed-top .logo-heder a.navbar-brand {
-        margin-left: 50px !important;
-    }
-}
 
 @media (max-width: 1600px) and (min-width: 1025px) {
     .owl-item.active:hover .item .pad-10 .newest-box {

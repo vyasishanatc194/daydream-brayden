@@ -1,0 +1,20 @@
+<div class="range-div" [formGroup]="searchform">
+	<h3>Grade Range</h3>
+	<div
+		class="custom-control custom-radio"
+		*ngFor="let grade of gradeRanges; let i = index"
+	>
+		<input
+			type="checkbox"
+			class="custom-control-input"
+			id="range{{ i }}"
+			value="{{ grade.name }}"
+			(change)="onGradeChange($event)"
+			name="range"
+			[checked]="i == 1 || i == 2 ? 'checked' : ''"
+		/>
+		<label class="custom-control-label" for="range{{ i }}">{{
+			grade.name
+		}}</label>
+	</div>
+</div>

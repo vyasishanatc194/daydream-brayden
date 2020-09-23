@@ -1,0 +1,34 @@
+<div class="search-input">
+	<div class="form-group mb-0">
+		<input
+			type="text"
+			class="form-control serach-text"
+			[class.d-block]="searchOpen"
+			placeholder="Search for content, tags, authors ..."
+		/>
+		<button
+			type="button"
+			class="btn btn-search show-in-mobile"
+			(click)="toggleSearch()"
+		>
+			<i class="fas fa-search"></i>
+		</button>
+		<button
+			type="button"
+			class="btn btn-search show-in-web"
+			(click)="search()"
+			routerLink="/search"
+		>
+			<i class="fas fa-search"></i>
+		</button>
+		<a
+			href="javascript:void(0)"
+			class="d-none close-search"
+			(click)="toggleSearch()"
+			[class.d-flex]="searchOpen"
+			*ngIf="searchOpen"
+		>
+			<i class="fa fa-times"></i>
+		</a>
+	</div>
+</div>

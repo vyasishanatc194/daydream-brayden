@@ -1,0 +1,33 @@
+<div
+	[ngClass]="id !== 'exploring' ? 'group-checkbox' : 'expl'"
+	[formGroup]="searchform"
+>
+	<div
+		class="custom-control custom-checkbox"
+		*ngFor="let createdby of data; let i = index"
+	>
+		<input
+			type="checkbox"
+			class="custom-control-input"
+			id="{{ id + i }}"
+			(change)="onCheckboxChange($event)"
+			value="{{
+				id === 'formal' ||
+				id === 'informal' ||
+				id === 'browser-hardware' ||
+				id === 'os-hardware'
+					? createdby.title
+					: createdby.name
+			}}"
+			[checked]="checkeds"
+		/>
+		<label class="custom-control-label" for="{{ id + i }}">{{
+			id === 'formal' ||
+			id === 'informal' ||
+			id === 'browser-hardware' ||
+			id === 'os-hardware'
+				? createdby.title
+				: createdby.name
+		}}</label>
+	</div>
+</div>

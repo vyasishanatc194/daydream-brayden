@@ -51,10 +51,12 @@
 					<app-lesson-container
 						title="Featured"
 						[lessons]="slides"
+						[clipHorizontally]="true"
 					></app-lesson-container>
 					<app-lesson-container
 						title="Newest"
 						[lessons]="slides"
+						[clipHorizontally]="true"
 					></app-lesson-container>
 				</div>
 				<div
@@ -132,7 +134,7 @@
 							<div class="text-or">
 								<span>OR</span>
 							</div>
-							<a href="#" class="btn btn-primary btn-yello"
+							<a routerLink="/sign-up" class="btn btn-primary btn-yello"
 								>Create an account</a
 							>
 						</div>

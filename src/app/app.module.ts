@@ -7,28 +7,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { NotificationComponent } from './pages/section/notification/notification.component';
-import { ProfileComponent } from './pages/section/profile/profile.component';
-import { BaseComponent } from './base/base.component';
+import { HeaderModule } from './pages/section/header/header.module';
 import { HomeModule } from './pages/home/home.module';
 import { SerachModule } from './pages/search/search.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
-import { LessonComponent } from './pages/lesson/lesson.component';
+import { LessonModule } from './pages/lesson/lesson.module';
+import { FooterComponent } from './pages/section/footer/footer.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		NotificationComponent,
-		ProfileComponent,
-		BaseComponent,
 		SignUpComponent,
-		LessonComponent
+		FooterComponent
 	],
 	imports: [
 		HttpClientModule,
 		BrowserModule,
+		HeaderModule,
 		HomeModule,
 		SerachModule,
+		LessonModule,
 		BrowserAnimationsModule,
 		AppRoutingModule,
 		FormsModule,
