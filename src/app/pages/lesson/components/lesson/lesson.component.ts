@@ -23,12 +23,12 @@ export class LessonComponent implements OnInit {
 		public api: ApiService,
 		private route: ActivatedRoute
 	) {
-		const action_ob = {
+		const actionOb = {
 			action: 'set_page',
 			redirect_to: '',
 			dataobj: { page: this.router.url }
 		};
-		this.event.globalEvent(action_ob);
+		this.event.globalEvent(actionOb);
 	}
 
 	ngOnInit(): void {

@@ -24,7 +24,7 @@
 		.navbar-toggler-icon {
 			background-image: none;
 			font-size: 27px;
-			color: #ffffff;
+			color: #fff;
 			font-weight: 600;
 		}
 	}
@@ -43,7 +43,7 @@
 		.navbar-nav {
 			.nav-item {
 				.nav-link {
-					color: #ffffff;
+					color: #fff;
 					font-size: 16px;
 					line-height: 24px;
 					font-weight: 600;
@@ -51,12 +51,12 @@
 					letter-spacing: 0.12;
 
 					&:hover {
-						color: #ffffff;
+						color: #fff;
 					}
 				}
 
 				.nav-link.active {
-					color: #ffffff !important;
+					color: #fff !important;
 				}
 			}
 		}
@@ -138,7 +138,7 @@
 		overflow-x: hidden;
 		transition: 0.5s;
 		z-index: 999999;
-		background-color: #ffffff;
+		background-color: #fff;
 		padding: 20px 0px !important;
 		flex-basis: auto;
 		justify-content: flex-start;
@@ -311,7 +311,7 @@
 		overflow-x: hidden;
 		transition: 0.5s;
 		z-index: 999999;
-		background-color: #ffffff;
+		background-color: #fff;
 		padding: 20px 0px !important;
 		flex-basis: auto;
 		justify-content: flex-start;

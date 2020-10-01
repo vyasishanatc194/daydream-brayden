@@ -23,12 +23,12 @@ export class SignUpComponent implements OnInit {
 		private authenticationService: AuthenticationService,
 		private alertService: AlertService
 	) {
-		const action_ob = {
+		const actionOb = {
 			action: 'set_page',
 			redirect_to: '',
 			dataobj: { page: this.router.url }
 		};
-		this.event.globalEvent(action_ob);
+		this.event.globalEvent(actionOb);
 
 		// redirect to home if already logged in
 		if (this.authenticationService.currentUserValue) {

@@ -101,8 +101,8 @@ export class SearchFormComponent implements OnInit {
 			.getData('hardwares', null)
 			.toPromise()
 			.then((res) => {
-				this.browsers = res.filter((b) => b.type == 'operatingSystem');
-				this.operatingSystems = res.filter((os) => os.type == 'browser');
+				this.browsers = res.filter((b) => b.type === 'operatingSystem');
+				this.operatingSystems = res.filter((os) => os.type === 'browser');
 			});
 	}
 

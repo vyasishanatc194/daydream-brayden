@@ -12,7 +12,7 @@ import { EventService } from 'src/app/services/event/event.service';
 })
 export class SearchComponent implements OnInit {
 	// seachForm : FormGroup;
-	public input_search: any = null;
+	public inputSearch: any = null;
 	public educatorModeOn: boolean = false;
 	private subscription: ISubscription;
 	public slides: Lesson[] = [];
@@ -23,13 +23,13 @@ export class SearchComponent implements OnInit {
 		private router: Router,
 		private event: EventService
 	) {
-		const action_ob = {
+		const actionOb = {
 			action: 'set_page',
 			redirect_to: '',
 			dataobj: { page: this.router.url }
 		};
-		this.event.globalEvent(action_ob);
-		this.input_search = localStorage.getItem('input_search');
+		this.event.globalEvent(actionOb);
+		this.inputSearch = localStorage.getItem('inputSearch');
 	}
 
 	ngOnInit(): void {
