@@ -8,7 +8,5 @@ import { Component, Input, OnInit } from '@angular/core';
 export class LessonRightComponent implements OnInit {
 	@Input() lesson: any;
 
-	constructor() {}
-
 	ngOnInit(): void {}
 }

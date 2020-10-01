@@ -16,8 +16,6 @@ export class LessonCardComponent implements OnInit {
 	public flippedCard: boolean = false;
 	private flipTime: number = 0;
 
-	constructor() {}
-
 	ngOnInit(): void {}
 
 	public closeCard(e) {

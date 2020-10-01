@@ -29,8 +29,6 @@ export class MostPopularComponent implements OnInit {
 		}
 	];
 
-	constructor() {}
-
 	ngOnInit(): void {}
 
 	// toggle most popular tags class

@@ -10,7 +10,5 @@ export class LessonBannerComponent implements OnInit {
 	public apiUrl = environment.api_url;
 	@Input() lesson: any;
 
-	constructor() {}
-
 	ngOnInit(): void {}
 }

@@ -29,7 +29,5 @@ export class LessonLeftComponent implements OnInit {
 		}
 	];
 
-	constructor() {}
-
 	ngOnInit(): void {}
 }

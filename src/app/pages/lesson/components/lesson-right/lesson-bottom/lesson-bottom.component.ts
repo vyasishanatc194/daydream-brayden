@@ -52,7 +52,5 @@ export class LessonBottomComponent implements OnInit {
 		}
 	];
 
-	constructor() {}
-
 	ngOnInit(): void {}
 }

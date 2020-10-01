@@ -9,7 +9,5 @@ export class LessonTitleComponent implements OnInit {
 	@Input() title: any;
 	@Input() createdAt: any;
 
-	constructor() {}
-
 	ngOnInit(): void {}
 }

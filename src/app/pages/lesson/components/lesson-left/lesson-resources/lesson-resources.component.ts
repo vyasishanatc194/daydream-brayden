@@ -8,7 +8,5 @@ import { Component, Input, OnInit } from '@angular/core';
 export class LessonResourcesComponent implements OnInit {
 	@Input() documents: [];
 
-	constructor() {}
-
 	ngOnInit(): void {}
 }

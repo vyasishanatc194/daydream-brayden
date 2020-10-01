@@ -1,5 +1,5 @@
 .sub-header.sub-dark {
-	background-color: #222222 !important;
+	background-color: #222 !important;
 }
 
 .sub-header {
@@ -15,7 +15,7 @@
 	}
 
 	.navbar-toggler {
-		color: #666666;
+		color: #666;
 		padding: 0;
 		outline: 0 !important;
 		border: 0;
@@ -96,9 +96,9 @@
 					padding: 10px 12px 0 12px;
 					font-weight: 700 !important;
 					white-space: nowrap;
-					color: #000000 !important;
+					color: #000 !important;
 					&:hover {
-						color: #000000;
+						color: #000;
 					}
 					&::after {
 						display: none;
@@ -211,7 +211,7 @@
 			display: flex;
 			.menu-bar-logo {
 				font-size: 27px;
-				color: #333333;
+				color: #333;
 				position: relative;
 				left: 8px;
 				top: -3px;
@@ -227,7 +227,7 @@
 			}
 			.menu-bar-close {
 				font-size: 20px;
-				color: #333333;
+				color: #333;
 				position: relative;
 				right: 10px;
 				top: -1px;
@@ -266,10 +266,10 @@
 						line-height: 26px;
 						padding: 8px 12px;
 						font-weight: 700;
-						color: #000000;
+						color: #000;
 
 						&:hover {
-							color: #000000;
+							color: #000;
 						}
 						&:after {
 							display: none;
@@ -380,7 +380,7 @@
 			display: flex;
 			.menu-bar-logo {
 				font-size: 27px;
-				color: #333333;
+				color: #333;
 				position: relative;
 				left: 8px;
 				top: -3px;
@@ -396,7 +396,7 @@
 			}
 			.menu-bar-close {
 				font-size: 20px;
-				color: #333333;
+				color: #333;
 				position: relative;
 				right: 10px;
 				top: -1px;

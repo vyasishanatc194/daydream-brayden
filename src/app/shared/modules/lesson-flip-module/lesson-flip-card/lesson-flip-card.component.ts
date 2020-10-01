@@ -18,8 +18,6 @@ export class LessonFlipCardComponent implements OnInit {
 	public flipTime: number;
 	public apiUrl: string = environment.api_url;
 
-	constructor() {}
-
 	ngOnInit(): void {}
 
 	public reduceLanguages(lesson) {

@@ -6,7 +6,5 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./community-contribution.component.scss']
 })
 export class CommunityContributionComponent implements OnInit {
-	constructor() {}
-
 	ngOnInit(): void {}
 }

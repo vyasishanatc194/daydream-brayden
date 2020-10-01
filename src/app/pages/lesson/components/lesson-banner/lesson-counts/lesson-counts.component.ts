@@ -6,7 +6,5 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./lesson-counts.component.scss']
 })
 export class LessonCountsComponent implements OnInit {
-	constructor() {}
-
 	ngOnInit(): void {}
 }
