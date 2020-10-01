@@ -128,8 +128,8 @@
 	}
 
 	.sidenav-new-menu {
-		height: 100%;
-		min-height: 830px;
+		height: 100% !important;
+		min-height: auto;
 		width: 0;
 		position: fixed;
 		right: 0;

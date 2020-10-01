@@ -37,7 +37,7 @@ body {
     background-color: $bgcolor;
     color: #666666;
     font-size: $fontsize;
-    // font-family: "open_sansregular" !important;
+    font-family: "open_sansregular";
     font-weight: normal;
 }
 /* end the variables */
@@ -423,6 +423,7 @@ body {
     }
 }
 .middle-section {
+    overflow-x: hidden;
     .row-10 {
         margin: 0 -10px;
         .pad-10 {

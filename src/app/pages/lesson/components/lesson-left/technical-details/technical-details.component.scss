@@ -1,0 +1,36 @@
+p {
+	color: #333333;
+	font-size: 16px;
+	line-height: 19px;
+}
+.tech-support {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: row;
+
+	.tech-box {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		flex-direction: column;
+		width: 100%;
+		max-width: 70px;
+		img {
+			margin-bottom: 12px;
+			height: 20px;
+			width: 20px;
+		}
+		p {
+			font-size: 10px;
+			line-height: 14px;
+		}
+
+		.icon-tech {
+			margin-bottom: 5px;
+			i {
+				font-size: 20px;
+			}
+		}
+	}
+}

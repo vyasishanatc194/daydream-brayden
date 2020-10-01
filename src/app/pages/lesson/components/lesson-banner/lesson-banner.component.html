@@ -1,9 +1,9 @@
 <section class="banner-inner-page">
 	<div
 		class="banner-inner-div"
-		[style.background]="
-			'url(' + apiUrl + '/' + lesson.cardImage.url + ') no-repeat'
-		"
+		[ngStyle]="{
+			'background-image': 'url(' + apiUrl + '/' + lesson.cardImage?.url + ')'
+		}"
 	></div>
 
 	<div class="banner-inner-content">
@@ -15,7 +15,7 @@
 					</a>
 				</div>
 				<app-lesson-title
-					style="width: 100%;"
+					class="w-100"
 					[title]="lesson.title"
 					[createdAt]="lesson.createdAt"
 				></app-lesson-title>

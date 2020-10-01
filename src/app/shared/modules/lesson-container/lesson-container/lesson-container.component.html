@@ -15,7 +15,7 @@
 	</div>
 	<div class="sliderContainer row col-11 mx-0 px-0" *ngIf="slider">
 		<app-lesson-card
-			class="col-lg-3 col-md-6 col-12 mx-0 p-2"
+			class="col-lg-3 col-md-6 col-12 mx-0 p-2 custom_lesson_card"
 			[ngStyle]="{
 				left: getCardSpacing() * (i - sliderIndex) + '%',
 				transition: sliderTransition ? sliderTransitionTime + 's ease' : 'none'

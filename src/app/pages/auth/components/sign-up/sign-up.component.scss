@@ -57,7 +57,7 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		background-image: url('../../../assets/images/slide-2.jpg');
+		background-image: url('../../../../../assets/images/slide-2.jpg');
 		background-repeat: no-repeat;
 		background-position: center top;
 		background-size: 100%;
@@ -197,7 +197,7 @@
 				.custom-checkbox
 					.custom-control-input:checked
 					~ .custom-control-label::after {
-					background-image: url('../../../assets/images/check.png');
+					background-image: url('../../../../../assets/images/check.png');
 					width: 11px !important;
 					height: 7px !important;
 					background-position: center;
@@ -209,7 +209,7 @@
 				.custom-checkbox.selected
 					.custom-control-input:checked
 					~ .custom-control-label::after {
-					background-image: url('../../../assets/images/cutom-check.png');
+					background-image: url('../../../../../assets/images/cutom-check.png');
 					height: 3px !important;
 					top: 11px;
 				}

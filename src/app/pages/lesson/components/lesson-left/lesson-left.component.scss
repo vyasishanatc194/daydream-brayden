@@ -1,0 +1,51 @@
+.lession-content-left {
+	.content {
+		margin-bottom: 25px;
+
+		h3 {
+			font-size: 18px;
+			line-height: 24px;
+			color: #333333;
+			font-weight: 700;
+			margin-bottom: 20px;
+		}
+
+		p {
+			color: #333333;
+			font-size: 16px;
+			line-height: 19px;
+		}
+
+		.lession-item {
+			ul {
+				margin: 0;
+				padding: 0;
+				li {
+					list-style: none;
+					display: block;
+					margin-bottom: 15px;
+					span {
+						color: #717171;
+						font-size: 16px;
+						line-height: 22px;
+						display: flex;
+						flex-direction: row;
+						i {
+							margin-right: 5px;
+							width: 20px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.content-language {
+		p {
+			margin-bottom: 8px;
+		}
+	}
+}

@@ -11,8 +11,6 @@ import { environment } from 'src/environments/environment';
 	styleUrls: ['./lesson.component.scss']
 })
 export class LessonComponent implements OnInit {
-	currentPage = '';
-	sticky: boolean = false;
 	public lesson: Lesson[] = [];
 	public apiUrl = environment.api_url;
 	loadFlag: boolean = false;

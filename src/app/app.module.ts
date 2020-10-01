@@ -6,22 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { NotificationComponent } from './pages/section/notification/notification.component';
 import { HeaderModule } from './pages/section/header/header.module';
 import { HomeModule } from './pages/home/home.module';
 import { SerachModule } from './pages/search/search.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { LessonModule } from './pages/lesson/lesson.module';
 import { FooterComponent } from './pages/section/footer/footer.component';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		NotificationComponent,
-		SignUpComponent,
-		FooterComponent
-	],
+	declarations: [AppComponent, FooterComponent],
 	imports: [
 		HttpClientModule,
 		BrowserModule,
@@ -30,9 +22,7 @@ import { FooterComponent } from './pages/section/footer/footer.component';
 		SerachModule,
 		LessonModule,
 		BrowserAnimationsModule,
-		AppRoutingModule,
-		FormsModule,
-		ReactiveFormsModule
+		AppRoutingModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

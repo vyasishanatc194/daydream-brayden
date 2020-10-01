@@ -275,13 +275,17 @@
             .item {
                 .slide-owl {
                     .banner-caption { 
-                        .caption-box{ margin-left: 0px; max-width: 680px; }
+                        .caption-box{ margin-left: 0px; max-width: 600px; }
                     }
                 }
             }
         }
     }
 
+
+        .middle-section .hero-banner-section .owl-nav {
+            top: 47%;
+        }
     .user-drop-down .dropdown .btn-secondary::after {
         right: -30px;
     }

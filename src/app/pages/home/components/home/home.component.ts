@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Lesson } from 'src/app/model/lesson.model';
 import { ApiService } from 'src/app/services/API/api.service';
 import { EventService } from 'src/app/services/event/event.service';
+import { AlertService } from 'src/app/services/alert/alert.service';
 
 @Component({
 	selector: 'app-home',
@@ -20,7 +21,11 @@ export class HomeComponent implements OnInit {
 	public slides: Lesson[] = [];
 
 	activeSlides: SlidesOutputData;
-	constructor(private event: EventService, public api: ApiService) {}
+	constructor(
+		private event: EventService,
+		public api: ApiService,
+		private alertService: AlertService
+	) {}
 
 	ngOnInit(): void {
 		this.subscription = this.event.currentData.subscribe((data: any) => {
@@ -46,7 +51,9 @@ export class HomeComponent implements OnInit {
 				this.pageData = result;
 				this.loadHeroSlider();
 			},
-			(error) => {}
+			(error) => {
+				this.alertService.error(error);
+			}
 		);
 	}
 
@@ -94,5 +101,10 @@ export class HomeComponent implements OnInit {
 	toggelModel: boolean = false;
 	loginModelToggel() {
 		this.toggelModel = !this.toggelModel;
+	}
+
+	// Unsubscribe event before leave component
+	ngOnDestroy() {
+		this.subscription.unsubscribe();
 	}
 }

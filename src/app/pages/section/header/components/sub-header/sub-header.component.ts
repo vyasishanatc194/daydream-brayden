@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+import { Router } from '@angular/router';
 import { ISubscription } from 'rxjs/Subscription';
 import { EventService } from 'src/app/services/event/event.service';
 
@@ -12,10 +14,14 @@ export class SubHeaderComponent implements OnInit {
 	currentPage = '';
 	subscription: ISubscription;
 
-	constructor(private event: EventService) {
+	constructor(private event: EventService, private router: Router) {
+		// Set Current Page
+		router.events.subscribe((url: any) => {
+			this.currentPage = this.router.url;
+		});
 		// Receive event and data from another component
 		this.subscription = this.event.currentData.subscribe((data: any) => {
-			if (data.action == 'set_page') {
+			if (data.action === 'set_page') {
 				this.currentPage = data.dataobj.page;
 			}
 		});
@@ -30,5 +36,10 @@ export class SubHeaderComponent implements OnInit {
 		} else {
 			this.naveOpen = true;
 		}
+	}
+
+	// Unsubscribe event before leave component
+	ngOnDestroy() {
+		this.subscription.unsubscribe();
 	}
 }

@@ -4,6 +4,8 @@
 			type="text"
 			class="form-control serach-text"
 			[class.d-block]="searchOpen"
+			[(ngModel)]="searchInput"
+			(keyup)="search($event)"
 			placeholder="Search for content, tags, authors ..."
 		/>
 		<button

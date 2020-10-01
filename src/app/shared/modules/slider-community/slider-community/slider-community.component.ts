@@ -61,4 +61,9 @@ export class SliderCommunityComponent implements OnInit {
 	public getCommunityPostsBySize(size: number = 4) {
 		return this.communityPosts.slice(0, size);
 	}
+
+	// Unsubscribe event before leave component
+	ngOnDestroy() {
+		this.subscription.unsubscribe();
+	}
 }

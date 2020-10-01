@@ -54,20 +54,6 @@ export class HeaderComponent implements OnInit {
 		this.getpageDetail('home-page');
 	}
 
-	// On change mode
-	toggleMode() {
-		if (this.educatorModeOn) {
-			this.educatorModeOn = false;
-		} else {
-			this.educatorModeOn = true;
-		}
-		const ob = {
-			action: 'set_flag_mode',
-			dataobj: { educatorModeOn: this.educatorModeOn, page: this.router.url }
-		};
-		this.event.globalEvent(ob);
-	}
-
 	// Get home page data from api
 	getpageDetail(slug: any) {
 		this.api.getData(slug, []).subscribe(

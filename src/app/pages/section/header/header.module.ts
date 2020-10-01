@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { SubHeaderComponent } from './components/sub-header/sub-header.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { EducatorModeComponent } from './components/educator-mode/educator-mode.component';
+import { AuthModule } from '../../auth/auth.module';
 
 @NgModule({
 	declarations: [
@@ -17,7 +18,13 @@ import { EducatorModeComponent } from './components/educator-mode/educator-mode.
 		SearchBarComponent,
 		EducatorModeComponent
 	],
-	imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
+	imports: [
+		CommonModule,
+		FormsModule,
+		ReactiveFormsModule,
+		RouterModule,
+		AuthModule
+	],
 	exports: [
 		ProfileComponent,
 		HeaderComponent,

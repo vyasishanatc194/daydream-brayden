@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventService } from 'src/app/services/event/event.service';
 
 @Component({
 	selector: 'app-search-bar',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 	searchOpen: boolean = false;
+	public searchInput: string;
 
-	constructor() {}
+	constructor(private event: EventService) {}
 
 	ngOnInit(): void {}
 
@@ -22,5 +24,13 @@ export class SearchBarComponent implements OnInit {
 	}
 
 	// On search event
-	search() {}
+	search(e?: any) {
+		if (e && e.key !== 'Enter') return;
+		this.event.globalEvent({
+			action: 'search',
+			dataob: {
+				input: this.searchInput
+			}
+		});
+	}
 }

@@ -23,12 +23,6 @@ import { GradeRangeComponent } from './grade-range/grade-range.component';
 		ReactiveFormsModule,
 		TypeaheadModule.forRoot()
 	],
-	exports: [
-		SearchFormComponent,
-		TopicsComponent,
-		CheckboxGroupComponent,
-		MostPopularComponent,
-		GradeRangeComponent
-	]
+	exports: [SearchFormComponent]
 })
 export class SerachFormModule {}

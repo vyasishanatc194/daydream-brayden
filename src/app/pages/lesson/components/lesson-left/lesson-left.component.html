@@ -1,1 +1,43 @@
-<p>lesson-left works!</p>
+<div class="lession-content-left">
+	<div class="content">
+		<h3>Lesson Info</h3>
+
+		<div class="lession-item">
+			<ul>
+				<li>
+					<span><i class="fa fa-stopwatch"></i> {{ lesson.duration }} </span>
+				</li>
+				<li>
+					<span><i class="fa fa-eye"></i> 0,000,000 +</span>
+				</li>
+				<li>
+					<span><i class="fa fa-share-square"></i> 35</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="content">
+		<h3>Lesson Resources</h3>
+
+		<app-lesson-resources [documents]="resources"> </app-lesson-resources>
+	</div>
+
+	<div class="content">
+		<h3>Alignment Douments</h3>
+
+		<app-lesson-resources [documents]="alignDocuments"> </app-lesson-resources>
+	</div>
+
+	<div class="content">
+		<h3>Technical Details</h3>
+		<p>{{ lesson.technicalDetails }}</p>
+
+		<app-technical-details></app-technical-details>
+	</div>
+
+	<div class="content content-language">
+		<h3>Languages</h3>
+		<p *ngFor="let lang of lesson.languages">{{ lang.name }}</p>
+	</div>
+</div>

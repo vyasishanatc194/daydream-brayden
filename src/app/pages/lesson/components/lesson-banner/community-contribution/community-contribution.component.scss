@@ -11,3 +11,41 @@
 		}
 	}
 }
+@media (max-width: 320px) {
+	.banner-bottom {
+		height: 100%;
+		display: flex;
+		align-items: flex-end;
+		min-height: 90px;
+	}
+
+	.banner-bottom .btn {
+		font-size: 12px;
+		position: relative;
+		img {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+		span {
+			display: block;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.banner-bottom .btn {
+		font-size: 12px;
+		padding-left: 45px;
+		line-height: 18px;
+		position: relative;
+		img {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+		span {
+			display: block;
+		}
+	}
+}

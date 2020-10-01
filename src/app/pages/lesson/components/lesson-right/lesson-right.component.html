@@ -1,1 +1,58 @@
-<p>lesson-right works!</p>
+<div class="lession-content-right">
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="content">
+				<h3>Lesson Description</h3>
+				<p>{{ lesson.description }}</p>
+			</div>
+
+			<div class="content">
+				<h3>Central Question</h3>
+				<p>{{ lesson.centralQuestion }}</p>
+			</div>
+
+			<div class="content">
+				<h3>Instructional Objective</h3>
+				<p>{{ lesson.instructionalObjective }}</p>
+			</div>
+
+			<div class="content">
+				<h3>Topics</h3>
+				<div class="topic-tag">
+					<ul>
+						<li *ngFor="let topic of lesson.topics">
+							<a href="#">{{ topic.title }}</a>
+						</li>
+						<li>
+							<a href="" class="add-tag">Add a tag</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-6">
+			<app-lesson-right-detail [lesson]="lesson"></app-lesson-right-detail>
+			<!-- <div class="content">
+				<h3>Learning Outcomes</h3>
+
+				<div class="lernig-outcome">
+					<ul>
+						<li>{{ lesson.learningOutcomes }}</li>
+					</ul>
+				</div>
+
+				<div class="content pre-requesti">
+					<h3>Prerequisites</h3>
+
+					<ul>
+						<li>{{ lesson.prerequisites }}</li>
+					</ul>
+				</div>
+			</div> -->
+		</div>
+	</div>
+
+	<hr class="bt-01" />
+	<app-lesson-bottom></app-lesson-bottom>
+</div>

@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="col-lg-12">
+		<div class="content">
+			<h3>Teach with This Lesson</h3>
+			<p>
+				There are three ways to teach with this lesson. Select the option that
+				best fits the needs of you and your learners.
+			</p>
+		</div>
+	</div>
+</div>
+
+<div class="row row-10">
+	<div class="col-lg-4 pad-10" *ngFor="let cards of techCards">
+		<div class="learn-card">
+			<h3>Do you want to</h3>
+			<div class="learn-card-body">
+				<ul>
+					<li *ngFor="let cont of cards.card">{{ cont.content }}</li>
+				</ul>
+				<div class="learn-card-footer">
+					<a href="#" class="btn btn-blue">Launch to get started</a>
+					<span class="text-required">
+						* Login Required
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

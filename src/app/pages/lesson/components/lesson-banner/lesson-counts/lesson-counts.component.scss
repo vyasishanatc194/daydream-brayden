@@ -30,3 +30,19 @@
 		}
 	}
 }
+@media (max-width: 320px) {
+	.banner-bottom-share {
+		height: auto;
+		ul {
+			li {
+				display: block;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.banner-bottom-share {
+		padding: 10px 10px;
+	}
+}

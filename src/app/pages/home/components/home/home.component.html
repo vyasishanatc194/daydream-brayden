@@ -68,11 +68,15 @@
 					<div class="col-3 mx-0 px-0 h-100 text-center">
 						<div
 							class="icon mx-auto my-auto align-self-center position-relative"
+							style="color: #666;"
 						>
 							<i class="fas fa-plus position-absolute"></i>
 						</div>
 					</div>
-					<div class="offset-1 col-8 px-0 textContent font-weight-bold">
+					<div
+						class="offset-1 col-8 px-0 textContent font-weight-bold"
+						style="color: #666;"
+					>
 						Submit Your<br />Own Lesson
 					</div>
 				</div>
@@ -110,35 +114,7 @@
 							community created content, and collaboration tools.
 						</p>
 					</div>
-					<div class="login-form">
-						<div class="form-group">
-							<label for="">Email Address</label>
-							<input
-								type="text"
-								class="form-control"
-								placeholder="Enter Your Email"
-							/>
-						</div>
-
-						<div class="form-group">
-							<label for="">Password</label>
-							<input
-								type="password"
-								class="form-control"
-								placeholder="Enter Your password"
-							/>
-							<span class="forgot-link"><a href="#">Forgot password</a></span>
-						</div>
-						<div class="btn-groups">
-							<a href="#" class="btn btn-primary btn-blue">Login</a>
-							<div class="text-or">
-								<span>OR</span>
-							</div>
-							<a routerLink="/sign-up" class="btn btn-primary btn-yello"
-								>Create an account</a
-							>
-						</div>
-					</div>
+					<app-login title="loginModel"></app-login>
 				</div>
 			</div>
 		</div>

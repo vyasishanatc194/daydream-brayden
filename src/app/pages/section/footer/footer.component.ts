@@ -16,7 +16,14 @@ export class FooterComponent implements OnInit {
 		private route: ActivatedRoute,
 		private router: Router,
 		private event: EventService
-	) {}
+	) {
+		// Receive event and data from another component
+		this.event.currentData.subscribe((data: any) => {
+			if (data.action === 'set_flag_mode') {
+				this.educatorModeOn = data.dataobj.educatorModeOn;
+			}
+		});
+	}
 
 	ngOnInit(): void {}
 

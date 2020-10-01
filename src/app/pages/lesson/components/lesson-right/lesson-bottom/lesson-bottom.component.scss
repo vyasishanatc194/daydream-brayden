@@ -1,0 +1,90 @@
+h3 {
+	font-size: 18px;
+	line-height: 24px;
+	color: #333333;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+p {
+	color: #333333;
+	font-size: 16px;
+	line-height: 22px;
+}
+.learn-card {
+	margin-bottom: 20px;
+	h3 {
+		font-size: 18px;
+		line-height: 24px;
+		color: #333333;
+		font-weight: 800;
+		margin-bottom: 10px;
+		display: block;
+	}
+
+	.learn-card-body {
+		background-color: #ebebeb;
+		padding: 15px 20px;
+		min-height: 300px;
+		ul {
+			margin: 0 0 15px 0;
+			padding: 0 0 0 20px;
+			min-height: 180px;
+			li {
+				font-size: 16px;
+				line-height: 24px;
+				color: #333333;
+			}
+		}
+
+		.learn-card-footer {
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			max-width: 222px;
+			.btn-blue {
+				background-color: #006586;
+				color: #ffffff;
+				border-radius: 2px;
+				padding: 10px 20px;
+				font-weight: 600;
+				font-size: 15px;
+				line-height: 20px;
+				white-space: nowrap;
+				width: 100%;
+
+				&:hover {
+					background-color: #00516b;
+				}
+			}
+			span {
+				font-size: 14px;
+				line-height: 19px;
+				text-align: right;
+				width: 100%;
+				display: block;
+				margin: 8px 0;
+				color: #3398b9;
+			}
+		}
+	}
+}
+@media (max-width: 767px) {
+	.learn-card .learn-card-body {
+		min-height: unset;
+	}
+	.learn-card .learn-card-body ul {
+		min-height: unset;
+	}
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+	.learn-card .learn-card-body {
+		min-height: unset;
+	}
+	.learn-card .learn-card-body ul {
+		min-height: unset;
+	}
+}
